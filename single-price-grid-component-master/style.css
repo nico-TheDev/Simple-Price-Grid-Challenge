@@ -1,0 +1,132 @@
+
+    .attribution { font-size: 11px; text-align: center;color: white; }
+    .attribution a { color: hsl(67, 78%, 61%); }
+  
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --brightyellow: hsl(71, 73%, 54%);
+    --lightgray: hsl(204, 43%, 93%);
+    --grayishblue: hsl(218, 22%, 67%);
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+body{
+    background-color: gray;
+}
+
+.container{
+    width: 50%;
+    margin: 80px auto;
+    min-width: 375px;
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+    "main main"
+    "sub why"
+    ;
+    border-radius: 10px;
+    background-color: white;;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.container > *{
+    padding: 40px;
+}
+
+.main{
+    grid-area: main;
+    justify-self: start;
+    display: grid;
+    grid-row-gap: 20px;
+    
+}
+
+.main h2{
+    color:var(--cyan);
+}
+
+.main p:first-of-type{
+    color: var(--brightyellow);
+}
+
+.main p:last-child{
+    color: gray;
+}
+
+.subscription{
+    grid-area:sub;
+    background-color:var(--cyan);
+    display: grid;
+    grid-row-gap: 10px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+
+}
+
+.subscription p {
+    color: var(--lightgray);
+}
+
+.subscription p span{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.subscription button{
+    background: var(--brightyellow);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 0;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.subscription button:hover{
+    background-color: hsl(71, 73%, 44%);
+}
+
+.why-us{
+    grid-area: why;
+    background-color: #4ABEBD;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 10px;
+}
+
+.why-us h3{
+    margin-bottom: 20px;
+}
+
+.why-us p{
+    color: var(--lightgray);
+}
+
+/* QUERY */
+
+@media (max-width:800px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "main"
+        "sub"
+        "why";
+    }
+}
